@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- PartyTown Script -->
+	<script>
+		partytown = {
+		  debug: true,
+		  forward: ['storePinLocation', 'getPinLocation'],
+		};
+	  </script>
+    <script>
+      !function(w,p,f,c){c=w[p]=Object.assign(w[p]||{},{lib:"/~partytown/",debug:false});c[f]=(c[f]||[]).concat(["storePinLocation","getPinLocation"])}(window,'partytown','forward');
+    </script>
+    <script type="module" src="/~partytown/partytown.js"></script>
+    %sveltekit.head%
+  </head>
+  <body>
+    <div>%sveltekit.body%</div>
+  </body>
+</html>
