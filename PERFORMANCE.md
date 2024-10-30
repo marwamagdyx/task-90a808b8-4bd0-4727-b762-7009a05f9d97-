@@ -1,43 +1,47 @@
-# Performance Considerations
+# **Performance Considerations**
+
+## Table of Contents
+| Section | Description |
+| ----------- | ----------- |
+| [Metrics](#metrics)| Performance output numbers. |
+| [Mobile Performance](#mobile-performance)| mobile performance. |
+| [Performance Optimizations](#performance-optimizations)| performance optimizations on the application. |
+
+---
+---
 
 ## Metrics
-- Target FPS: 60
-- Initial load time: < 2s
-- Time to Interactive: < 3s
-- Smooth marker dragging on mobile devices
+- Initial load time: < 3s
+- Smooth marker dragging on mobile devices.
 
-## Optimizations
-1. Lazy loading of map components
-2. Progressive tile loading
-3. Efficient marker position updates
-4. LocalStorage for faster data access
-5. Minimal bundle size through code splitting
-6. Map tile caching
-7. Touch event optimization
-8. No blocking during storage operations
-9. Storage operations run in a web worker
+
+![build run time](./screenshots/build-time.JPG)
+![developing run time](./screenshots/dev-run-time.JPG)
+
+*Console log time metrics.*
 
 ## Mobile Performance
-1. Reduced tile quality on slower connections
-2. Debounced position updates during marker drag
-3. Optimized touch interactions
-4. Efficient DOM updates using Svelte
-
+1. Lowered map tile quality on slow connections
+2. Smoothed position updates while dragging the marker
+3. Improved touch interaction
+---
 
 ### Performance Optimizations
 
 #### 1. Debouncing
-We implemented a debounce function to prevent excessive calls to the location storage function when the user drags the marker. This reduces redundant updates and enhances performance.
+Added a debounce to limit how often the location gets saved while dragging the marker. This cuts down on unnecessary updates and keeps performance smooth.
 
 #### 2. Asynchronous Loading with PartyTown
-By offloading certain tasks to PartyTown (like managing pin location storage), we reduced the main thread load, improving responsiveness and overall performance.
+PartyTown to handle tasks, which lightened the main thread’s load and boosted responsiveness and performance.
 
-#### 3. Leaflet Map Optimization
-- Set an appropriate `maxZoom` for the map, limiting data rendering beyond useful levels.
-- Adjusted tile layer loading for faster map interactions.
+### Performance Test
+Used the Lighthouse tool to test the performance of the application.
 
-#### 4. Lazy Loading
-Modules like Leaflet are imported asynchronously using `await import('leaflet')` to delay loading until needed, reducing the initial load time.
 
-#### 5. Browser-Specific Performance
-Targeted optimizations for Chrome on Android, including use of LocalStorage for asynchronous data handling, tailored for mobile performance.
+![performance Test](./screenshots/lighthouse1.JPG)
+
+![performance Test](./screenshots/lighthouse2.JPG)
+
+*Lighthouse score showing performance metrics.*
+
+
