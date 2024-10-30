@@ -1,4 +1,3 @@
-![Watch the video](https://drive.google.com/drive/folders/1PhQ5DNW8zw_7raj0ifGqoKfCn_oMXlAs?usp=drive_link)
 
 ## Creating a project
 
