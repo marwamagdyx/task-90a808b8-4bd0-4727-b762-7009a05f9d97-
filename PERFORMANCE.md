@@ -11,7 +11,7 @@
 ---
 
 ## Metrics
-- Initial load time: < 3s
+- Initial load time: < 4s
 - Smooth marker dragging on mobile devices.
 
 
